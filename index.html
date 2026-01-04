@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClassCut | Attendance Calculator</title>
+  <link rel="stylesheet" href="stylericha.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="background-glow"></div>
+  <div class="background-glow secondary"></div>
+
+
+  <main class="app-container">
+<nav class="navbar">
+  <div class="logo">
+    <span class="brand">ClassCut</span>
+    <span class="coolors-text">
+      <span>C</span><span>h</span><span>e</span><span>y</span><span>t</span><span>h</span><span>a</span><span>l</span><span>o</span>
+    </span>
+  </div>
+</nav>
+
+
+
+    </nav>
+
+    <section class="hero-content">
+      <div class="welcome-badge">STUDENT DASHBOARD</div>
+      <h2>Hello, <span class="username">Pazhampori!</span></h2>
+      <p class="subtitle"></p>
+      
+      <div class="date-container">
+        <label for="date">Current Session:</label>
+        <input type="date" id="date" value="2026-01-04" />
+      </div>
+    </section>
+    <div class="palette-container">
+  <span class="palette-label">Select Status:</span>
+  <div class="color-options">
+    <div class="color-tool active" data-color="green" title="Attended">
+      <div class="dot green"></div> <span>Attended</span>
+    </div>
+    <div class="color-tool" data-color="red" title="Skipped">
+      <div class="dot red"></div> <span>Skipped</span>
+    </div>
+    <div class="color-tool" data-color="pink" title="Cancelled">
+      <div class="dot pink"></div> <span>Cancelled</span>
+    </div>
+  </div>
+</div>
+
+    <section class="timetable-section">
+      <div class="section-header">
+        <h2 class="table-heading text-glow">Today’s Timetable</h2>
+        <span class="day-tag">Monday</span>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="timetable">
+          <thead>
+            <tr>
+              <th><span class="period-num">01</span><br>Maths</th>
+              <th><span class="period-num">02</span><br>CAO</th>
+              <th><span class="period-num">03</span><br>DBMS</th>
+              <th class="break-col"><span class="break-text">Break</span></th>
+              <th><span class="period-num">04</span><br>OS LAB</th>
+              <th><span class="period-num">05</span><br>DBMS LAB</th>
+              <th><span class="period-num">06</span><br>EE</th>
+            </tr>
+          </thead>
+        </table>
+
+</div>
+      </div>
+                <div class="action-area">
+  <input type="checkbox" id="victory-btn" class="btn-victory">
+    ATTENDED ALL CLASSES TODAY 
+    </section>
+  <button class="viewbutton">View Full Timetable</button>
+  </main>
+  <script src="scriptricha.js"></script>
+</body>
+</html>
