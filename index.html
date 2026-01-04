@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ClassCut | Attendance Calculator</title>
   <link rel="stylesheet" href="stylericha.css" />
+  <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -96,12 +96,17 @@
 
 </div>
       </div>
-                <div class="action-area">
+  <div class="action-area">
   <input type="checkbox" id="victory-btn" class="btn-victory">
     ATTENDED ALL CLASSES TODAY 
     </section>
   <button class="viewbutton">View Full Timetable</button>
   </main>
   <script src="scriptricha.js"></script>
+<section id="graphpage">
+  <h2 class="title">Attendance Overview</h2>
+  <div class="chart-grid" id="chartGrid"></div>
+</section>
+<script src="script.js"></script>
 </body>
 </html>
