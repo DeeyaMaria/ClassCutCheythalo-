@@ -1,3 +1,6 @@
+const API_BASE_URL = "https://jess-seamy-manifoldly.ngrok-free.dev";
+
+
 const letters = document.querySelectorAll(".coolors-text span");
 
 const palette = [
@@ -106,12 +109,13 @@ const days = [
 // Update day when date changes
 dateInput.addEventListener('change', () => {
   const selectedDate = new Date(dateInput.value);
-
   if (!isNaN(selectedDate)) {
     const dayName = days[selectedDate.getDay()];
     dayTag.textContent = dayName;
+    loadTimetableForDate(dateInput.value);
   }
 });
+
 
 // 🔁 Set correct day on page load (important)
 window.addEventListener('load', () => {
@@ -119,4 +123,63 @@ window.addEventListener('load', () => {
     const today = new Date(dateInput.value);
     dayTag.textContent = days[today.getDay()];
   }
+  loadTimetableForDate(dateInput.value);
+
+});
+
+async function loadTimetableForDate(dateValue) {
+  const date = new Date(dateValue);
+  const days = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
+  const dayName = days[date.getDay()];
+
+  if (dayName === "sunday") {
+    document.querySelectorAll(".subject").forEach(el => el.textContent = "No Class");
+    return;
+  }
+
+  try {
+    // Added the skip-warning header to fix the ngrok block
+    const response = await fetch(`${API_BASE_URL}/tt`, {
+      headers: {
+        "ngrok-skip-browser-warning": "true" 
+      }
+    });
+
+    const data = await response.json();
+    const subjects = data[dayName]; 
+    const subjectEls = document.querySelectorAll(".subject");
+
+    if (subjects) {
+      subjectEls.forEach((el, i) => {
+        // This targets the <span class="subject"> in your HTML
+        el.textContent = subjects[i] || "-";
+      });
+    }
+
+    // Reset colors when the day changes
+    const headers = document.querySelectorAll('.timetable th:not(.break-col)');
+    headers.forEach(header => {
+      header.classList.remove('state-green', 'state-red', 'state-pink');
+    });
+
+  } catch (err) {
+    console.error("API error:", err);
+  }
+}
+
+const viewBtn = document.querySelector(".viewbutton");
+
+viewBtn.addEventListener("click", () => {
+  const dateValue = document.getElementById("date").value;
+  const dateObj = new Date(dateValue);
+
+  const days = [
+    "sunday","monday","tuesday","wednesday",
+    "thursday","friday","saturday"
+  ];
+
+  const day = days[dateObj.getDay()];
+
+  // redirect with params
+  window.location.href = `timetable.html?day=${day}&date=${dateValue}`;
 });
