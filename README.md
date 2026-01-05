@@ -57,4 +57,19 @@ ClassCut is a modern, interactive student dashboard that helps track attendance,
 ---
 
 ## 📂 Project Structure
+ClassCut/
+│
+├── index.html          # Main student dashboard
+├── graphpage.html      # Attendance visualization (donut charts)
+├── timetable.html      # Full weekly timetable view
+│
+├── styles.css          # Donut chart & graph styling
+├── style.css           # Weekly timetable styling
+├── stylericha.css      # Main UI, animations & layout
+│
+├── script.js           # Attendance graph logic + API integration
+├── scriptricha.js      # Dashboard logic, attendance marking & API calls
+├── script2.js          # Weekly timetable data handling
+│
+└── README.md           # Project documentation
 
