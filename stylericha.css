@@ -118,7 +118,12 @@ body {
   font-size: 1.1rem;
   margin-top: 0.5rem;
 }
-
+.hero-content,
+.hero-content h2,
+.hero-content .welcome-badge,
+.hero-content .subtitle {
+  text-align: left !important;
+}
 .date-container {
   margin-top: 2rem;
   display: flex;
@@ -450,3 +455,4 @@ Table Header States
 .viewbutton:active {
     transform: translateY(0px); /* Presses back down when clicked */
 }
+
