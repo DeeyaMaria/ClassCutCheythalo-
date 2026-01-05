@@ -73,3 +73,10 @@ ClassCut/
 │
 └── README.md 
 
+## 🎥 Video Demo
+
+
+https://github.com/user-attachments/assets/c34d3ade-012b-4a7c-b6b0-efd545f81da7
+
+
+
